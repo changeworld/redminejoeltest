@@ -1,8 +1,10 @@
 <% html_title(l(:JoelTest)) -%>
 <h2><%= l(:joel_test) %></h2>
-<div class="joel_test-plugin"><%
+<div class="joel_test-plugin">
+  <%= link_to("Joel on Software - ジョエル・テスト", "http://japanese.joelonsoftware.com/Articles/TheJoelTest.html", {:popup => true}) %><%
+# TODO ユーザの選択言語によって、リンク文字、リンク先を変動させる。
 if (@target != nil) %>
-  <%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %><%
+  <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %></p><%
 end %>
   <% form_tag :action => "reply", :id => @project do %>
     <ol><%
