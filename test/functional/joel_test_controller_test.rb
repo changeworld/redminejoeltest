@@ -29,18 +29,15 @@ class JoelTestControllerTest < ActionController::TestCase
 
   def test_index
     # get リクエストでの index アクションの呼び出し。 id をパラメータとして渡す。
-#    @request.session[:user_id] = 1
+    @request.session[:user_id] = 1
     get :index, :id => 1
-#    # 呼び出した結果の正否の確認
-#    assert_response :success
-#
-#    # クラス変数 @project が nil で無いことの確認
-#    assert_not_nil assigns(:project)
-#
-#    # クラス変数 @user が nil で無いことの確認
-#    assert_not_nil assigns(:user)
-#
-#    # クラス変数 @question_of_joel_test が nil で無いことの確認
-#    assert_not_nil assigns(:question_of_joel_test)
+    # 呼び出した結果の正否の確認
+    assert_response :success
+    # クラス変数 @project が nil で無いことの確認
+    assert_not_nil assigns(:project)
+    # クラス変数 @user が nil で無いことの確認
+    assert_not_nil assigns(:user)
+    # クラス変数 @question_of_joel_test が nil で無いことの確認
+    assert_not_nil assigns(:question_of_joel_test)
   end
 end
