@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+joel_test_scores001:
+  id: 1
+  user_id: 1
+  score: 1
+  created_on: 2010-04-08 21:42:28
+
+joel_test_scores002:
+  id: 2
+  user_id: 1
+  score: 5
+  created_on: 2010-04-09 21:42:28
+
+joel_test_scores003:
+  id: 3
+  user_id: 1
+  score: 3
+  created_on: 2010-04-10 21:42:28
+
+joel_test_scores004:
+  id: 4
+  user_id: 1
+  score: 12
+  created_on: 2010-04-07 21:42:28

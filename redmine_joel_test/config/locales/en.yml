@@ -1,0 +1,21 @@
+# English strings go here for Rails i18n
+en:
+  JoelTest: Joel Test
+  joel_test: Joel Test
+  label_your_last_score: Your last score
+  label_score: score
+
+  text_do_you_use_source_control: Do you use source control?
+  text_can_you_make_a_build_in_one_step: Can you make a build in one step?
+  text_do_you_make_daily_builds: Do you make daily builds?
+  text_do_you_have_a_bug_database: Do you have a bug database?
+  text_do_you_fix_bugs_before_writing_new_code: Do you fix bugs before writing new code?
+  text_do_you_have_an_up_to_date_schedule: Do you have an up-to-date schedule?
+  text_do_you_have_a_spec: Do you have a spec?
+  text_do_programmers_have_quiet_working_conditions: Do programmers have quiet working conditions?
+  text_do_you_use_the_best_tools_money_can_buy: Do you use the best tools money can buy?
+  text_do_you_have_testers: Do you have testers?
+  text_do_new_candidates_write_code_during_their_interview: Do new candidates write code during their interview?
+  text_do_you_do_hallway_usability_testing: Do you do hallway usability testing?
+
+  my_label: "My label"

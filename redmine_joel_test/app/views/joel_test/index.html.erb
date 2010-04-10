@@ -1,0 +1,17 @@
+<% html_title(l(:JoelTest)) -%>
+<h2><%= l(:joel_test) %></h2>
+<div class="joel_test-plugin"><%
+if (@target != nil) %>
+  <%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %><%
+end %>
+  <% form_tag :action => "reply", :id => @project do %>
+    <ol><%
+# TODO 点数の遷移をグラフ表示する。
+@question_of_joel_test.each_with_index {|label, index|  # ジョエルテストの質問を表示する処理
+   %>
+      <li><%= l(label) %><label><%= radio_button "question", (index + 1).to_s, "yes" %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no") %>No</label></li><%
+} %>
+    </ol>
+    <%= submit_tag l(:button_reply) %>
+  <% end %>
+</div>

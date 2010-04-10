@@ -1,0 +1,21 @@
+# Japanese strings go here for Rails i18n
+ja:
+  JoelTest: ジョエルテスト
+  joel_test: ジョエルテスト
+  label_your_last_score: 前回のあなたの得点
+  label_score: 点
+
+  text_do_you_use_source_control: 構成管理システムを使っていますか？
+  text_can_you_make_a_build_in_one_step: 1回のオペレーションでビルドを行うことが出来ますか？
+  text_do_you_make_daily_builds: 毎日ビルドを行っていますか？
+  text_do_you_have_a_bug_database: バグ管理システムを使っていますか？
+  text_do_you_fix_bugs_before_writing_new_code: 新しいコードを書く前にバグを修正していますか？
+  text_do_you_have_an_up_to_date_schedule: スケジュール表は更新することが出来ますか？
+  text_do_you_have_a_spec: 仕様書がありますか？
+  text_do_programmers_have_quiet_working_conditions: プログラマは静かな労働環境にありますか？
+  text_do_you_use_the_best_tools_money_can_buy: 購入することが出来る範囲で一番良い開発ツールを使っていますか？
+  text_do_you_have_testers: テスト担当者はいますか？
+  text_do_new_candidates_write_code_during_their_interview: プログラマを採用する際に、コードを書いてもらう様にしていますか？
+  text_do_you_do_hallway_usability_testing: 「廊下での使い勝手テスト」を行っていますか？
+
+  my_label: "My label"
