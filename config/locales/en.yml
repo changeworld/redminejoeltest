@@ -3,6 +3,7 @@ en:
   JoelTest: Joel Test
   joel_test: Joel Test
   label_your_last_score: Your last score
+  label_average_score: Average score
   label_score: score
 
   text_do_you_use_source_control: Do you use source control?

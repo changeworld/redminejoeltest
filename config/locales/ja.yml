@@ -3,6 +3,7 @@ ja:
   JoelTest: ジョエルテスト
   joel_test: ジョエルテスト
   label_your_last_score: 前回のあなたの得点
+  label_average_score: 平均点
   label_score: 点
 
   text_do_you_use_source_control: 構成管理システムを使っていますか？
