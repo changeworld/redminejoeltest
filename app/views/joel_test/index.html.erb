@@ -13,9 +13,9 @@ end %>
 # TODO 点数の遷移をグラフ表示する。
 @question_of_joel_test.each_with_index {|label, index|  # ジョエルテストの質問を表示する処理
   if (@target != nil) %>
-      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes", {:checked => @target.answers[index] != 0 ? "checked" : "false"}) %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no", {:checked => @target.answers[index] != 1 ? "checked" : "false"}) %>No</label></li><%
+      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes", {:checked => @target.answers[index] != 0 ? "checked" : "false"}) %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no", {:checked => @target.answers[index] != 1 ? "checked" : "false"}) %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + "%") if @all_target.length != 0 %></li><%
   else %>
-      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes") %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no") %>No</label></li><%
+      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes") %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no") %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + "%") if @all_target.length != 0 %></li><%
   end
 } %>
     </ol>
