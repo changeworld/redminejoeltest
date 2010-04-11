@@ -2,6 +2,8 @@
 ja:
   JoelTest: ジョエルテスト
   joel_test: ジョエルテスト
+  label_joel_on_software: "Joel on Software - ジョエル・テスト"
+  label_joel_on_software_url: "http://japanese.joelonsoftware.com/Articles/TheJoelTest.html"
   label_your_last_score: 前回のあなたの得点
   label_average_score: 平均点
   label_score: 点
