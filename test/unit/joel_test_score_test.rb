@@ -36,6 +36,7 @@ class JoelTestScoreTest < ActiveSupport::TestCase
     users = JoelTestScore.find_last_score_by_user
     unless (users.length == 0)
       users.each do |user|
+        assert_equal(3, user.id)
         assert_equal(1, user.user_id)
         assert_equal(3, user.score)
         assert_equal(7, user.answers)

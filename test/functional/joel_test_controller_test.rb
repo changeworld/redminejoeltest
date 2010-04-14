@@ -49,16 +49,16 @@ class JoelTestControllerTest < ActionController::TestCase
     @request.session[:user_id] = 1
     get :index, :id => 1
     # 呼び出した結果の正否の確認
-    assert_response :success
+    assert_response(:success)
     # クラス変数 @project が nil で無いことの確認
-    assert_not_nil assigns(:project)
+    assert_not_nil(assigns(:project))
     # クラス変数 @user が nil で無いことの確認
-    assert_not_nil assigns(:user)
+    assert_not_nil(assigns(:user))
     # クラス変数 @target が nil で無いことの確認
-    assert_not_nil assigns(:target)
+    assert_not_nil(assigns(:target))
     # クラス変数 @average_score が nil で無いことの確認
-    assert_not_nil assigns(:average_score)
+    assert_not_nil(assigns(:average_score))
     # クラス変数 @question_of_joel_test が nil で無いことの確認
-    assert_not_nil assigns(:question_of_joel_test)
+    assert_not_nil(assigns(:question_of_joel_test))
   end
 end
