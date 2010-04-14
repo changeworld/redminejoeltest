@@ -23,7 +23,7 @@
 unless (@target == nil) %>
   <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %></p><%
 end
-unless (@all_target.length == 0) %>
+unless (@targets.length == 0) %>
   <p><%= l(:label_average_score) %> <%= @average_score %> <%= l(:label_score) %></p><%
 end %>
   <% form_tag :action => "reply", :id => @project do %>
@@ -31,9 +31,9 @@ end %>
 # TODO 点数の遷移をグラフ表示する。
 @question_of_joel_test.each_with_index {|label, index|  # ジョエルテストの質問を表示する処理
   if (@target != nil) %>
-      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes", {:checked => @target.answers[index] != 0 ? "checked" : "false"}) %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no", {:checked => @target.answers[index] != 1 ? "checked" : "false"}) %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + "%") if @all_target.length != 0 %></li><%
+      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes", {:checked => @target.answers[index] != 0 ? "checked" : "false"}) %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no", {:checked => @target.answers[index] != 1 ? "checked" : "false"}) %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + "%") if @targets.length != 0 %></li><%
   else %>
-      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes") %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no") %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + "%") if @all_target.length != 0 %></li><%
+      <li><%= l(label) %><label><%= radio_button("question", (index + 1).to_s, "yes") %>Yes</label><label><%= radio_button("question", (index + 1).to_s, "no") %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + "%") if @targets.length != 0 %></li><%
   end
 } %>
     </ol>
