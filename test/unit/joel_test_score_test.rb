@@ -30,13 +30,15 @@ class JoelTestScoreTest < ActiveSupport::TestCase
 
   def test_is_joel_test_scores_should_equal
     user1 = JoelTestScore.find_last_score_of_user(1)
-    assert_equal(1, user.user_id)
-    assert_equal(3, user.score)
+    assert_equal(1, user1.user_id)
+    assert_equal(3, user1.score)
+    assert_equal(7, user1.answers)
     users = JoelTestScore.find_last_score_by_user
-    unless (all_user.length == 0)
-      all_user.each do |user|
+    unless (users.length == 0)
+      users.each do |user|
         assert_equal(1, user.user_id)
         assert_equal(3, user.score)
+        assert_equal(7, user.answers)
       end
     end
   end

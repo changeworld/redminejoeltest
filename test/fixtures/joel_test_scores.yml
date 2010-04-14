@@ -11,14 +11,14 @@ joel_test_scores002:
   user_id: 1
   score: 5
   created_on: 2010-04-09 21:42:28
-  answers: 16
+  answers: 31
 
 joel_test_scores003:
   id: 3
   user_id: 1
   score: 3
   created_on: 2010-04-10 21:42:28
-  answers: 4
+  answers: 7
 
 joel_test_scores004:
   id: 4
