@@ -24,6 +24,7 @@ class JoelTestControllerTest < ActionController::TestCase
             :member_roles,
             :projects,
             :roles,
+            :trackers,
             :users,
             :joel_test_scores
 
