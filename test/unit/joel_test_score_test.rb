@@ -28,11 +28,11 @@ class JoelTestScoreTest < ActiveSupport::TestCase
     assert_not_nil(JoelTestScore.find_last_score_by_user)
   end
 
-  def test_is_joel_test_scores_shouldequal
-    user = JoelTestScore.find_last_score_of_user(1)
+  def test_is_joel_test_scores_should_equal
+    user1 = JoelTestScore.find_last_score_of_user(1)
     assert_equal(1, user.user_id)
     assert_equal(3, user.score)
-    all_user = JoelTestScore.find_last_score_by_user
+    users = JoelTestScore.find_last_score_by_user
     unless (all_user.length == 0)
       all_user.each do |user|
         assert_equal(1, user.user_id)

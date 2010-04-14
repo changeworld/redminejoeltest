@@ -83,13 +83,13 @@ class JoelTestController < ApplicationController
 
   # ユーザID毎の前回の得点を検索する。
   def find_average
-    @all_target = JoelTestScore.find_last_score_by_user
+    @targets = JoelTestScore.find_last_score_by_user
     total_count = 0
     total_score = 0
     answers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     @average_answers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    unless (@all_target.length == 0)
-      @all_target.each {|target|
+    unless (@targets.length == 0)
+      @targets.each {|target|
         total_count += 1
         total_score += target.score
         for index in 0 .. 11
