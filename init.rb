@@ -20,7 +20,7 @@ Redmine::Plugin.register :redmine_joel_test do
   name 'Redmine Joel Test plugin'
   author 'Takashi Takebayashi'
   description 'This is a Joel Test plugin for Redmine'
-  version '0.0.2'
+  version '0.0.3'
   requires_redmine :version_or_higher => '0.9.0'
 
   project_module :joel_test do
