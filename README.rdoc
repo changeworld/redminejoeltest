@@ -11,6 +11,4 @@ This is a plugin for Redmine
 
 3. Start Redmine
 
-4. Add joel test module into your project.
-
-5. Go to joel test setting tab in the project setting page.
+4. Add Joel Test module into your project.

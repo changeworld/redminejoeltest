@@ -1,0 +1,14 @@
+= Redmine Joel Test Plugin
+
+これは Redmine の為のプラグインです。
+
+=== プラグインをインストールする
+
+1. プラグインを vendor/plugins ディレクトリにコピーします。
+
+2. 以下のコマンドを実行します。
+   rake db:migrate_plugins RAILS_ENV=production
+
+3. Redmine を起動させます。
+
+4. プロジェクトの設定ページのモジュールにて、ジョエルテストをチェックし、保存します。
