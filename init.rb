@@ -24,7 +24,7 @@ Redmine::Plugin.register :redmine_joel_test do
   requires_redmine :version_or_higher => '0.9.0'
 
   project_module :joel_test do
-    permission :index, {:joel_test => [:index]}
+    permission :view_joel_test, {:joel_test => [:index]}
   end
 
   # プロジェクトメニューにジョエルテストプラグインを追加する設定
