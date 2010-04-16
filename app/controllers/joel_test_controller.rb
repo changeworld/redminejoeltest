@@ -24,6 +24,8 @@ class JoelTestController < ApplicationController
   def index
     find_last_answer
     find_average
+    @permisson_answer_joel_test = User.current.allowed_to?({:controller => :joel_test, :action => :answer}, @project, :global => :global)
+
     # ジョエルテストの質問の定数
     @question_of_joel_test = [:text_do_you_use_source_control,
       :text_can_you_make_a_build_in_one_step,
@@ -81,7 +83,7 @@ class JoelTestController < ApplicationController
     @target = JoelTestScore.find_last_score_of_user(@user.id)
   end
 
-  # ユーザID毎の前回の得点を検索する。
+  # ユーザID毎の前回の得点を検索し、平均点と各設問へのYes回答率を算出する。
   def find_average
     @targets = JoelTestScore.find_last_score_by_user
     total_count = 0

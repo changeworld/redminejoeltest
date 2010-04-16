@@ -37,6 +37,6 @@ end %>
   end
 } %>
     </ol>
-    <%= submit_tag l(:button_answer) %>
+    <%= submit_tag l(:button_answer), {:disabled => @permisson_answer_joel_test ? false : true} %>
   <% end %>
 </div>
