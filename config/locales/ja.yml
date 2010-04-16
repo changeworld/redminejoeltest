@@ -2,7 +2,7 @@
 ja:
   JoelTest: ジョエルテスト
   joel_test: ジョエルテスト
-  project_module_joel_test: ジョエルテスト
+
   label_joel_on_software: "Joel on Software - ジョエル・テスト"
   label_joel_on_software_url: "http://japanese.joelonsoftware.com/Articles/TheJoelTest.html"
   label_your_last_score: 前回のあなたの得点
@@ -10,6 +10,11 @@ ja:
   label_score: 点
 
   button_answer: 回答
+
+  permission_view_joel_test: ジョエルテストの閲覧
+  permission_answer_joel_test: ジョエルテストの回答
+
+  project_module_joel_test: ジョエルテスト
 
   text_do_you_use_source_control: 構成管理システムを使っていますか？
   text_can_you_make_a_build_in_one_step: 1回のオペレーションでビルドを行うことが出来ますか？

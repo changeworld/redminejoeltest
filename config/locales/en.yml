@@ -2,7 +2,7 @@
 en:
   JoelTest: Joel Test
   joel_test: Joel Test
-  project_module_joel_test: Joel Test
+
   label_joel_on_software: "The Joel Test: 12 Steps to Better Code - Joel on Software"
   label_joel_on_software_url: "http://www.joelonsoftware.com/articles/fog0000000043.html"
   label_your_last_score: Your last score
@@ -10,6 +10,11 @@ en:
   label_score: score
 
   button_answer: Answer
+
+  permission_view_joel_test: View joel test
+  permission_answer_joel_test: Answer joel test
+
+  project_module_joel_test: Joel Test
 
   text_do_you_use_source_control: Do you use source control?
   text_can_you_make_a_build_in_one_step: Can you make a build in one step?

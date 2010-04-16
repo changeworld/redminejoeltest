@@ -18,7 +18,7 @@ class JoelTestController < ApplicationController
   # A copy of ApplicationController has been removed from the module tree but is still active!対策
   unloadable
   # アクションが呼ばれる前に呼ぶメソッド
-  before_filter :find_project, :find_user
+  before_filter :find_project, :find_user, :authorize
 
   # ジョエルテストの設問と回答している場合は、前回の得点を表示する。
   def index
