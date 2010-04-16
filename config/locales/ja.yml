@@ -9,6 +9,8 @@ ja:
   label_average_score: 平均点
   label_score: 点
 
+  button_answer: 回答
+
   text_do_you_use_source_control: 構成管理システムを使っていますか？
   text_can_you_make_a_build_in_one_step: 1回のオペレーションでビルドを行うことが出来ますか？
   text_do_you_make_daily_builds: 毎日ビルドを行っていますか？

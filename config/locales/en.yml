@@ -9,6 +9,8 @@ en:
   label_average_score: Average score
   label_score: score
 
+  button_answer: Answer
+
   text_do_you_use_source_control: Do you use source control?
   text_can_you_make_a_build_in_one_step: Can you make a build in one step?
   text_do_you_make_daily_builds: Do you make daily builds?
