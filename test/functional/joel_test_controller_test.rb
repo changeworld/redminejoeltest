@@ -60,5 +60,9 @@ class JoelTestControllerTest < ActionController::TestCase
     assert_not_nil(assigns(:average_score))
     # クラス変数 @question_of_joel_test が nil で無いことの確認
     assert_not_nil(assigns(:question_of_joel_test))
+    assert_equal(6, assigns(:average_score))
+    for index in 0 .. 11
+      assert_equal(50, assigns(:average_answers)[index])
+    end
   end
 end
