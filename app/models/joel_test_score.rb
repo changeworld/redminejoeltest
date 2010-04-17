@@ -21,9 +21,9 @@ class JoelTestScore < ActiveRecord::Base
     find(:first, :conditions => ["user_id = (?)", user_id], :order => "created_on DESC")
   end
 
-  # テーブルの中からユーザ毎に前回の得点のインスタンスを探して返す。
+  # テーブルの中からユーザ毎の得点のインスタンスを探して返す。
   # 見つからなければ空配列を返す。
   def self.find_last_score_by_user
-    find_by_sql("SELECT joel.* FROM (SELECT * FROM joel_test_scores order by created_on) as joel group by user_id")
+    find(:all, :group => "user_id")
   end
 end

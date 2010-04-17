@@ -93,9 +93,10 @@ class JoelTestController < ApplicationController
     unless (@targets.length == 0)
       @targets.each {|target|
         total_count += 1
-        total_score += target.score
+        user = JoelTestScore.find_last_score_of_user(target.user_id)
+        total_score += user.score
         for index in 0 .. 11
-          answers[index] += target.answers.to_i[index]
+          answers[index] += user.answers.to_i[index]
         end
       }
       @average_score = total_score / total_count

@@ -34,16 +34,6 @@ class JoelTestScoreTest < ActiveSupport::TestCase
     assert_equal(joel_test_scores(:joel_test_scores003).score,   user1.score)
     assert_equal(joel_test_scores(:joel_test_scores003).answers, user1.answers)
     users = JoelTestScore.find_last_score_by_user
-    unless (users.length == 0)
-      users.each do |user|
-        if (joel_test_scores(:joel_test_scores001).user_id == user1.user_id)
-          assert_equal(joel_test_scores(:joel_test_scores003).score,   user.score)
-          assert_equal(joel_test_scores(:joel_test_scores003).answers, user.answers)
-        elsif (joel_test_scores(:joel_test_scores005).user_id == user1.user_id)
-          assert_equal(joel_test_scores(:joel_test_scores007).score,   user.score)
-          assert_equal(joel_test_scores(:joel_test_scores007).answers, user.answers)
-        end
-      end
-    end
+    assert_equal(2, users.length)
   end
 end
