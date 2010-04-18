@@ -21,7 +21,7 @@ class JoelTestControllerTest < ActionController::TestCase
   fixtures :attachments,
             :enabled_modules,
             :members, :member_roles,
-            :projects, :project_trackers,
+            :projects, :projects_trackers,
             :roles,
             :trackers,
             :users,
