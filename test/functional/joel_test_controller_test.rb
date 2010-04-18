@@ -20,9 +20,8 @@ require 'joel_test_controller'
 class JoelTestControllerTest < ActionController::TestCase
   fixtures :attachments,
             :enabled_modules,
-            :issues,  :issue_statuses,
             :members, :member_roles,
-            :projects,
+            :projects, :project_trackers,
             :roles,
             :trackers,
             :users,
