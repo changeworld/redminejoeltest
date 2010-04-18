@@ -63,6 +63,7 @@ class JoelTestControllerTest < ActionController::TestCase
     assert_equal(6, assigns(:average_score))
     for index in 0 .. 11
       assert_equal(50, assigns(:average_answers)[index])
+      assert_equal('50.00', sprintf("%.2f", assigns(:average_answers)[index]))
     end
   end
 end
