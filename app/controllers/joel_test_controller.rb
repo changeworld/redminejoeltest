@@ -99,7 +99,7 @@ class JoelTestController < ApplicationController
           answers[index] += user.answers.to_i[index]
         end
       }
-      @average_score = total_score / total_count
+      @average_score = total_score.to_f / total_count
       for index in 0 .. 11
         @average_answers[index] = (answers[index].to_f / total_count) * 100
       end
