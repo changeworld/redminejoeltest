@@ -65,4 +65,16 @@ class JoelTestControllerTest < ActionController::TestCase
       assert_equal('50.00', sprintf("%.2f", assigns(:average_answers)[index]))
     end
   end
+
+  def test_answer
+    # get リクエストでの answer アクションの呼び出し。 id をパラメータとして渡す。
+    @request.session[:user_id] = 1
+    get :answer, :id => 1
+    # クラス変数 @project が nil で無いことの確認
+    assert_not_nil(assigns(:project))
+    # クラス変数 @user が nil で無いことの確認
+    assert_not_nil(assigns(:user))
+    # クラス変数 @joel_test_scores が nil で無いことの確認
+    assert_not_nil(assigns(:joel_test_scores))
+  end
 end

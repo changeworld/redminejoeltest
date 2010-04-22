@@ -44,25 +44,25 @@ class JoelTestController < ApplicationController
 
   # ジョエルテストの設問への回答を取得し、Yesの数(スコア)を格納する。
   def answer
-    @target = JoelTestScore.new
+    @joel_test_scores = JoelTestScore.new
     if (params[:question] == nil)
       # 未選択 = 0点
-      @target.score = 0
-      @target.answers = 0
+      @joel_test_scores.score = 0
+      @joel_test_scores.answers = 0
     else
       @answer_values = params[:question].values.find_all {|val|
         val == 'yes'
       }
-      @target.score = @answer_values != nil ? @answer_values.length : 0
+      @joel_test_scores.score = @answer_values != nil ? @answer_values.length : 0
       answers = 0
       for index in 0 .. 11
         answers = answers * 2 + (params[:question][(12 - index).to_s] != nil ?  params[:question][(12 - index).to_s] != 'no' ? 1: 0 : 0)
       end
-      @target.answers = answers
+      @joel_test_scores.answers = answers
     end
-    @target.user_id = @user.id
+    @joel_test_scores.user_id = @user.id
     # @targetに値を入れてsaveを呼ぶとテーブルに値が格納される。
-    @target.save
+    @joel_test_scores.save
     redirect_to :action => 'index', :id => @project
   end
 

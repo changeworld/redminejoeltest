@@ -24,7 +24,7 @@ unless (@target == nil) %>
   <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %></p><%
 end
 unless (@targets.length == 0) %>
-  <p><%= l(:label_average_score) %> <%= @average_score %> <%= l(:label_score) %></p><%
+  <p><%= l(:label_average_score) %> <%= h(sprintf("%.2f", @average_score)) %> <%= l(:label_score) %></p><%
 end %>
   <% form_tag :action => 'answer', :id => @project do %>
     <ol><%
