@@ -31,9 +31,13 @@ end %>
 # TODO 点数の遷移をグラフ表示する。
 @question_of_joel_test.each_with_index {|label, index|  # ジョエルテストの質問を表示する処理
   if (@target != nil) %>
-      <li><%= l(label) %><label><%= radio_button('question', (index + 1).to_s, 'yes', {:checked => @target.answers[index] != 0 ? 'checked' : 'false'}) %>Yes</label><label><%= radio_button('question', (index + 1).to_s, 'no', {:checked => @target.answers[index] != 1 ? 'checked' : 'false'}) %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + '%') if @targets.length != 0 %></li><%
+      <li><%= l(label) %><br />
+        <label><%= radio_button('question', (index + 1).to_s, 'yes', {:checked => @target.answers[index] != 0 ? 'checked' : 'false'}) %>Yes</label><label><%= radio_button('question', (index + 1).to_s, 'no', {:checked => @target.answers[index] != 1 ? 'checked' : 'false'}) %>No</label><%= "<br />
+        <table class=\"yes-ratio\"><tr><th class=\"yes-ratio\">Yes率:#{sprintf("%.2f", @average_answers[index])}%</th><td class=\"yes-ratio\">" + progress_bar(@average_answers[index], {:width => '80px'}) + '</td></tr></table>' if (@targets.length != 0) %></li><%
   else %>
-      <li><%= l(label) %><label><%= radio_button('question', (index + 1).to_s, 'yes') %>Yes</label><label><%= radio_button('question', (index + 1).to_s, 'no') %>No</label> Yes: <%= h(sprintf("%.2f", @average_answers[index]) + '%') if @targets.length != 0 %></li><%
+      <li><%= l(label) %><br />
+        <label><%= radio_button('question', (index + 1).to_s, 'yes') %>Yes</label><label><%= radio_button('question', (index + 1).to_s, 'no') %>No</label><%= "<br />
+        <table class=\"yes-ratio\"><tr><th class=\"yes-ratio\">Yes率:#{sprintf("%.2f", @average_answers[index])}%</th><td class=\"yes-ratio\">" + progress_bar(@average_answers[index], {:width => '80px'}) + '</td></tr></table>' if (@targets.length != 0) %></li><%
   end
 } %>
     </ol>
