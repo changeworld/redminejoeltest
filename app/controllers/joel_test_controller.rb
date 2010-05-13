@@ -24,7 +24,7 @@ class JoelTestController < ApplicationController
   def index
     find_last_answer
     find_average
-    @permisson_answer_joel_test = User.current.allowed_to?({:controller => :joel_test, :action => :answer}, @project, :global => :global)
+    @permisson_answer_joel_test = @user.allowed_to?({:controller => :joel_test, :action => :answer}, @project, :global => :global)
 
     # ジョエルテストの設問の定数
     @question_of_joel_test = [:text_do_you_use_source_control,
