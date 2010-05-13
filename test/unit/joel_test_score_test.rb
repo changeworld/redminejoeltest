@@ -26,6 +26,7 @@ class JoelTestScoreTest < ActiveSupport::TestCase
   def test_is_joel_test_scores_should_return_not_nil
     assert_not_nil(JoelTestScore.find_last_score_of_user(joel_test_scores(:joel_test_scores001).user_id))
     assert_not_nil(JoelTestScore.find_last_score_by_user)
+    assert_not_nil(JoelTestScore.find_past_score_of_user(joel_test_scores(:joel_test_scores001).user_id))
   end
 
   def test_is_joel_test_scores_should_equal

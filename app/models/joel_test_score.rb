@@ -26,4 +26,10 @@ class JoelTestScore < ActiveRecord::Base
   def self.find_last_score_by_user
     find(:all, :group => "user_id")
   end
+
+  # テーブルの中から指定ユーザの過去の得点のインスタンスを探して返す。
+  # 見つからなければ空配列を返す。
+  def self.find_past_score_of_user(user_id)
+    find(:all, :conditions => ["user_id = (?)", user_id], :order => "created_on ASC")
+  end
 end
