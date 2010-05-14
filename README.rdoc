@@ -1,14 +1,26 @@
 = Redmine Joel Test Plugin
 
-This is a plugin for Redmine
+これは Redmine の為のプラグインです。
 
-=== Plugin installation
+=== 機能
 
-1. Copy the plugin directory into the vendor/plugins directory
+- 現在のあなたのソフトウェア開発チームの質を評価することができます。
+- 回答者の平均点を知ることが出来ます。
+- 各設問へのYesの回答の割合を知ることが出来ます。これによって、どの部分が弱いと皆が感じているかを知ることが出来ます。
 
-2. Migrate plugin:
+=== プラグインをインストールする
+
+1. プラグインを vendor/plugins ディレクトリにコピーします。
+
+2. プラグインのマイグレーションの為、以下のコマンドを実行します。
    rake db:migrate_plugins RAILS_ENV=production
 
-3. Start Redmine
+3. Redmine を起動させます。
 
-4. Add Joel Test module into your project.
+4. プロジェクトの設定ページのモジュールにて、ジョエルテストをチェックし、保存します。
+
+5. Redmineの管理 > ロールと権限 > 権限レポートのページにてジョエルテストプラグインの権限を設定します。
+
+=== 注意
+
+1. このプラグインは、Redmine 0.9.0 以降でのみ動作します。

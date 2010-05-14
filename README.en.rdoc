@@ -1,0 +1,20 @@
+= Redmine Joel Test Plugin
+
+This is a plugin for Redmine
+
+=== Plugin installation
+
+1. Copy the plugin directory into the vendor/plugins directory
+
+2. Migrate plugin:
+   rake db:migrate_plugins RAILS_ENV=production
+
+3. Start Redmine
+
+4. Add Joel Test module into your project.
+
+5. Configure Joel Test plugin permission (Administration > Roles and permissions > Permissions report).
+
+=== Note
+
+1. This plugin works only Redmine 0.9.0 or higher.
