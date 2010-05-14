@@ -36,5 +36,6 @@ class JoelTestScoreTest < ActiveSupport::TestCase
     assert_equal(joel_test_scores(:joel_test_scores003).answers, user1.answers)
     users = JoelTestScore.find_last_score_by_user
     assert_equal(2, users.length)
+    assert_equal(0, JoelTestScore.find_past_score_of_user(0).length)
   end
 end
