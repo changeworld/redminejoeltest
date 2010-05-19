@@ -21,7 +21,8 @@
 <div class='joel_test-plugin'>
   <%= link_to(l(:label_joel_on_software), l(:label_joel_on_software_url), {:popup => true}) %><%
 unless (@target == nil) %>
-  <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %></p><%
+  <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %><br />
+  <%= link_to(l(:label_your_recentry_score), :controller => 'joel_test', :action => 'report', :id => @project)%></p><%
 end
 unless (@targets.length == 0) %>
   <p><%= l(:label_average_score) %> <%= h(sprintf("%.2f", @average_score)) %> <%= l(:label_score) %></p><%

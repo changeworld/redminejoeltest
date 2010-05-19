@@ -26,7 +26,7 @@ Redmine::Plugin.register :redmine_joel_test do
 
   project_module :joel_test do
     permission :view_joel_test, {:joel_test => [:index]}
-    permission :answer_joel_test, {:joel_test => [:index, :answer]}, :require => :member
+    permission :answer_joel_test, {:joel_test => [:index, :answer, :report]}, :require => :member
   end
 
   # プロジェクトメニューにジョエルテストプラグインを追加する設定

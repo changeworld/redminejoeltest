@@ -7,6 +7,7 @@ This is a plugin for Redmine
 - The quality of your software development team can be evaluated.
 - It can know the average score of people who answered Joel Test.
 - It can know the ratio of the answer to each question. As a result, it can know everyone feels that which part is weak. 
+- Your recent score can be confirmed.
 
 === Plugin installation
 

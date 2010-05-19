@@ -22,7 +22,7 @@ class JoelTestController < ApplicationController
 
   # ジョエルテストの設問と回答している場合は、前回の得点を表示する。
   def index
-    find_last_answer
+    @target = JoelTestScore.find_last_score_of_user(@user.id)
     find_average
     @permisson_answer_joel_test = @user.allowed_to?({:controller => :joel_test, :action => :answer}, @project, :global => :global)
 
@@ -66,6 +66,11 @@ class JoelTestController < ApplicationController
     redirect_to :action => 'index', :id => @project
   end
 
+  # 直近5件のジョエルテストの設問への回答を取得して表示する。
+  def report
+    @reports = JoelTestScore.find_past_score_of_user(@user.id)
+  end
+
   private
   # プロジェクト情報を取得する。
   # タブ消滅対策
@@ -76,11 +81,6 @@ class JoelTestController < ApplicationController
   # ユーザ情報を取得する。
   def find_user
     @user = User.current
-  end
-
-  # ユーザIDをキーにテーブルを検索する。
-  def find_last_answer
-    @target = JoelTestScore.find_last_score_of_user(@user.id)
   end
 
   # ユーザID毎の前回の得点を検索し、平均点と各設問へのYes回答率を算出する。
