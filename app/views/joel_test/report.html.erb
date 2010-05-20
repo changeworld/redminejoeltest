@@ -35,8 +35,8 @@ else %>
   <tr class="<%= cycle("odd", "even") %>">
     <td align="center"><%= format_time(report.created_on) %></td>
     <td align="center"><%= report.score %></td>
-  </tr>
-<% } %>
+  </tr><%
+} %>
 </tbody>
 </table>
 <% end %>
