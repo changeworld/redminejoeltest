@@ -3,6 +3,8 @@ ja:
   JoelTest: ジョエルテスト
   joel_test: ジョエルテスト
 
+  field_score: 得点
+
   label_joel_on_software: "Joel on Software - ジョエル・テスト"
   label_joel_on_software_url: "http://japanese.joelonsoftware.com/Articles/TheJoelTest.html"
   label_your_last_score: 前回のあなたの得点
