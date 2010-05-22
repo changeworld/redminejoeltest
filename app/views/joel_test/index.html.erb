@@ -21,8 +21,7 @@
 <div class='joel_test-plugin'>
   <%= link_to(l(:label_joel_on_software), l(:label_joel_on_software_url), {:popup => true}) %><%
 unless (@target == nil) %>
-  <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %><br />
-  <%= link_to(l(:label_your_recentry_score), :controller => 'joel_test', :action => 'report', :id => @project)%></p><%
+  <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %></p><%
 end
 unless (@targets.length == 0) %>
   <p><%= l(:label_average_score) %> <%= h(sprintf("%.2f", @average_score)) %> <%= l(:label_score) %></p><%
@@ -42,6 +41,31 @@ end %>
   end
 } %>
     </ol>
-    <%= submit_tag l(:button_answer), {:disabled => @permisson_answer_joel_test ? false : true} %>
+    <p><%= submit_tag l(:button_answer), {:disabled => @permisson_answer_joel_test ? false : true} %></p>
   <% end %>
 </div>
+<% unless (@target == nil)
+%><div class="splitcontentleft">
+<h3><%= l(:label_your_recentry_score) %></h3><%
+  if @reports.length == 0 %>
+<p><i><%= l(:label_no_data) %></i></p><%
+  else %>
+<table class="list">
+<thead>
+  <tr>
+    <th style="width:50%"><%=l(:field_created_on)%></th>
+    <th align="center" style="width:50%"><%=l(:field_score)%></th>
+  </tr>
+</thead>
+<tbody><%
+    @reports.each {|report| %>
+  <tr class="<%= cycle("odd", "even") %>">
+    <td align="center"><%= format_time(report.created_on) %></td>
+    <td align="center"><%= report.score %></td>
+  </tr><%
+    } %>
+</tbody>
+</table><%
+  end %>
+</div>
+<% end %>

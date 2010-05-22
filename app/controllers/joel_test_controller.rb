@@ -20,7 +20,8 @@ class JoelTestController < ApplicationController
   # アクションが呼ばれる前に呼ぶメソッド
   before_filter :find_project, :find_user, :authorize
 
-  # ジョエルテストの設問と回答している場合は、前回の得点を表示する。
+  # ジョエルテストの設問を表示する。
+  # 既に回答している場合、前回の得点、直近5件までの回答結果を取得して表示する。
   def index
     @target = JoelTestScore.find_last_score_of_user(@user.id)
     find_average
@@ -40,6 +41,7 @@ class JoelTestController < ApplicationController
       :text_do_new_candidates_write_code_during_their_interview,
       :text_do_you_do_hallway_usability_testing
     ]
+    @reports = JoelTestScore.find_past_score_of_user(@user.id)
   end
 
   # ジョエルテストの設問への回答を取得し、Yesの数(スコア)を格納する。
@@ -64,11 +66,6 @@ class JoelTestController < ApplicationController
     # @targetに値を入れてsaveを呼ぶとテーブルに値が格納される。
     @joel_test_scores.save
     redirect_to :action => 'index', :id => @project
-  end
-
-  # 直近5件のジョエルテストの設問への回答を取得して表示する。
-  def report
-    @reports = JoelTestScore.find_past_score_of_user(@user.id)
   end
 
   private
