@@ -5,6 +5,7 @@ en:
 
   field_score: Score
 
+  label_what_is_the_joel_test: What is the Joel Test
   label_joel_on_software: "The Joel Test: 12 Steps to Better Code - Joel on Software"
   label_joel_on_software_url: "http://www.joelonsoftware.com/articles/fog0000000043.html"
   label_your_last_score: Your last score
@@ -31,3 +32,5 @@ en:
   text_do_you_have_testers: Do you have testers?
   text_do_new_candidates_write_code_during_their_interview: Do new candidates write code during their interview?
   text_do_you_do_hallway_usability_testing: Do you do hallway usability testing?
+  text_what_is_the_joel_test: Joel Test is a tool that tests to rate the quality of a software team.
+  text_for_more_information_joel_test: For more information, see 

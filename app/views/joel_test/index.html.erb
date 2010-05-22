@@ -18,8 +18,13 @@
 -%>
 <% html_title(l(:JoelTest)) -%>
 <h2><%= l(:joel_test) %></h2>
-<div class='joel_test-plugin'>
-  <%= link_to(l(:label_joel_on_software), l(:label_joel_on_software_url), {:popup => true}) %><%
+<div class="joel_test-plugin">
+  <h3><%= l(:label_what_is_the_joel_test) %></h3>
+  <p>
+    <%= l(:text_what_is_the_joel_test) %><br />
+    <%= l(:text_for_more_information_joel_test) %><br />
+    <%= link_to(l(:label_joel_on_software), l(:label_joel_on_software_url), {:popup => true}) %>
+  </p><%
 unless (@target == nil) %>
   <p><%= l(:label_your_last_score) %> <%= @target.score %> <%= l(:label_score) %></p><%
 end
@@ -43,9 +48,9 @@ end %>
     </ol>
     <p><%= submit_tag l(:button_answer), {:disabled => @permisson_answer_joel_test ? false : true} %></p>
   <% end %>
-</div>
-<% unless (@target == nil)
-%><div class="splitcontentleft">
+</div><%
+unless (@target == nil) %>
+<div class="splitcontentleft">
 <h3><%= l(:label_your_recentry_score) %></h3><%
   if @reports.length == 0 %>
 <p><i><%= l(:label_no_data) %></i></p><%
