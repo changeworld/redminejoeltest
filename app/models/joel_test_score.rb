@@ -30,6 +30,6 @@ class JoelTestScore < ActiveRecord::Base
   # テーブルの中から指定ユーザの直近5件の得点のインスタンスを探して返す。
   # 見つからなければ空配列を返す。
   def self.find_past_score_of_user(user_id)
-    find(:all, :conditions => ["user_id = (?)", user_id], :order => "created_on ASC", :limit => 5)
+    find(:all, :conditions => ["user_id = (?)", user_id], :order => "created_on DESC", :limit => 5)
   end
 end
