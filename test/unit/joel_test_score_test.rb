@@ -19,23 +19,35 @@ require File.dirname(__FILE__) + '/../test_helper'
 class JoelTestScoreTest < ActiveSupport::TestCase
   fixtures :joel_test_scores
 
-  def test_is_joel_test_scores_should_return_nil
+  def test_is_joel_test_find_last_score_of_user_should_return_nil
     assert_nil(JoelTestScore.find_last_score_of_user(0))
   end
 
-  def test_is_joel_test_scores_should_return_not_nil
+  def test_is_joel_test_find_last_score_of_user_should_return_not_nil
     assert_not_nil(JoelTestScore.find_last_score_of_user(joel_test_scores(:joel_test_scores001).user_id))
+  end
+
+  def test_is_joel_test_find_last_score_by_user_should_return_not_nil
     assert_not_nil(JoelTestScore.find_last_score_by_user)
+  end
+
+  def test_is_joel_test_find_past_score_of_user_should_return_not_nil
     assert_not_nil(JoelTestScore.find_past_score_of_user(joel_test_scores(:joel_test_scores001).user_id))
   end
 
-  def test_is_joel_test_scores_should_equal
-    user1 = JoelTestScore.find_last_score_of_user(joel_test_scores(:joel_test_scores001).user_id)
-    assert_equal(joel_test_scores(:joel_test_scores001).user_id, user1.user_id)
-    assert_equal(joel_test_scores(:joel_test_scores003).score,   user1.score)
-    assert_equal(joel_test_scores(:joel_test_scores003).answers, user1.answers)
-    users = JoelTestScore.find_last_score_by_user
-    assert_equal(2, users.length)
+  def test_is_joel_test_find_last_score_of_user_should_equal_score
+    assert_equal(joel_test_scores(:joel_test_scores003).score,   JoelTestScore.find_last_score_of_user(joel_test_scores(:joel_test_scores001).user_id).score)
+  end
+
+  def test_is_joel_test_find_last_score_of_user_should_equal_answers
+    assert_equal(joel_test_scores(:joel_test_scores003).answers, JoelTestScore.find_last_score_of_user(joel_test_scores(:joel_test_scores001).user_id).answers)
+  end
+
+  def test_is_joel_test_find_last_score_by_user_should_equal
+    assert_equal(2, JoelTestScore.find_last_score_by_user.length)
+  end
+
+  def test_is_joel_test_find_past_score_of_user_should_equal
     assert_equal(0, JoelTestScore.find_past_score_of_user(0).length)
   end
 end
