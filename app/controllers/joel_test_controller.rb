@@ -23,7 +23,7 @@ class JoelTestController < ApplicationController
   # ジョエルテストの設問を表示する。
   # 既に回答している場合、前回の得点、直近5件までの回答結果を取得して表示する。
   def index
-    @target = JoelTestScore.find_last_score_of_user(@user.id)
+    @target = JoelTestScore.find_last_score_of_user @user.id
     find_average
     @permisson_answer_joel_test = @user.allowed_to?({:controller => :joel_test, :action => :answer}, @project, :global => :global)
 
@@ -41,7 +41,8 @@ class JoelTestController < ApplicationController
       :text_do_new_candidates_write_code_during_their_interview,
       :text_do_you_do_hallway_usability_testing
     ]
-    @reports = JoelTestScore.find_past_score_of_user(@user.id)
+    @reports = JoelTestScore.find_past_score_of_user @user.id
+    sort_in_reverse @reports
   end
 
   # ジョエルテストの設問への回答を取得し、Yesの数(スコア)を格納する。
@@ -101,5 +102,20 @@ class JoelTestController < ApplicationController
         @average_answers[index] = (answers[index].to_f / total_count) * 100
       end
     end
+  end
+
+  # JoelTestScore 配列から score を抜き出し、逆順に並び替えてグラフ表示用配列を作成する。
+  def sort_in_reverse reports
+    score = nil
+    if reports.length != 0
+      reports.each_with_index {|report, index|
+        unless index == 0
+          score = "'" + report.score.to_s + "', " + score
+        else
+          score = "'" + report.score.to_s + "'"
+        end
+      }
+    end
+    @graph = score
   end
 end
