@@ -49,19 +49,11 @@ class JoelTestControllerTest < ActionController::TestCase
     get :index, :id => 1
     # 呼び出した結果の正否の確認
     assert_response(:success)
-    # クラス変数 @project が nil で無いことの確認
-    assert_not_nil(assigns(:project))
-    # クラス変数 @user が nil で無いことの確認
-    assert_not_nil(assigns(:user))
-    # クラス変数 @target が nil で無いことの確認
+    before_filter
     assert_not_nil(assigns(:target))
-    # クラス変数 @average_score が nil で無いことの確認
-    assert_not_nil(assigns(:average_score))
-    # クラス変数 @question_of_joel_test が nil で無いことの確認
     assert_not_nil(assigns(:question_of_joel_test))
     assert_equal(6, assigns(:average_score))
     for index in 0 .. 11
-      assert_equal(50, assigns(:average_answers)[index])
       assert_equal('50.00', sprintf("%.2f", assigns(:average_answers)[index]))
     end
   end
@@ -70,11 +62,13 @@ class JoelTestControllerTest < ActionController::TestCase
     # get リクエストでの answer アクションの呼び出し。 id をパラメータとして渡す。
     @request.session[:user_id] = 1
     get :answer, :id => 1
-    # クラス変数 @project が nil で無いことの確認
-    assert_not_nil(assigns(:project))
-    # クラス変数 @user が nil で無いことの確認
-    assert_not_nil(assigns(:user))
-    # クラス変数 @joel_test_scores が nil で無いことの確認
+    before_filter
     assert_not_nil(assigns(:joel_test_scores))
+  end
+
+  private
+  def before_filter
+    assert_not_nil(assigns(:project))
+    assert_not_nil(assigns(:user))
   end
 end
