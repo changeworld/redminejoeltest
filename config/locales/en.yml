@@ -1,6 +1,5 @@
 # English strings go here for Rails i18n
 en:
-  JoelTest: Joel Test
   joel_test: Joel Test
 
   field_score: Score

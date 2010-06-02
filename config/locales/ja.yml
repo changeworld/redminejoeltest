@@ -1,6 +1,5 @@
 # Japanese strings go here for Rails i18n
 ja:
-  JoelTest: ジョエルテスト
   joel_test: ジョエルテスト
 
   field_score: 得点
@@ -16,7 +15,7 @@ ja:
   button_answer: 回答
 
   permission_view_joel_test: ジョエルテストの閲覧
-  permission_answer_joel_test: ジョエルテストの回答
+  permission_answer_joel_test: ジョエルテストへの回答
 
   project_module_joel_test: ジョエルテスト
 

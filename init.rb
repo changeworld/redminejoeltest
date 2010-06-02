@@ -30,5 +30,5 @@ Redmine::Plugin.register :redmine_joel_test do
   end
 
   # プロジェクトメニューにジョエルテストプラグインを追加する設定
-  menu :project_menu, :joeltest, {:controller => 'joel_test', :action => 'index'}, :caption => :JoelTest
+  menu :project_menu, :joel_test, {:controller => 'joel_test', :action => 'index'}, :caption => :joel_test
 end
