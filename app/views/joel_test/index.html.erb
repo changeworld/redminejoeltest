@@ -32,7 +32,6 @@ unless (@targets.length == 0) %>
 end %>
   <% form_tag :action => 'answer', :id => @project do %>
     <ol><%
-# TODO 点数の遷移をグラフ表示する。
 @question_of_joel_test.each_with_index {|label, index|  # ジョエルテストの質問を表示する処理
   if (@target != nil) %>
       <li><%= l(label) %><br />
