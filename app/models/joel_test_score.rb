@@ -18,18 +18,31 @@ class JoelTestScore < ActiveRecord::Base
   # テーブルの中から指定ユーザの前回の得点のインスタンスを探して返す。
   # 見つからなければ nil を返す。
   def self.find_last_score_of_user user_id
-    find(:first, :conditions => ["user_id = (?)", user_id], :order => "created_on DESC")
+    find :first, :conditions => ["user_id = (?)", user_id], :order => "created_on DESC"
   end
 
   # テーブルの中からユーザ毎の得点のインスタンスを探して返す。
   # 見つからなければ空配列を返す。
   def self.find_last_score_by_user
-    find(:all, :group => "user_id")
+    find :all, :group => "user_id"
   end
 
   # テーブルの中から指定ユーザの直近5件の得点のインスタンスを探して返す。
   # 見つからなければ空配列を返す。
   def self.find_past_score_of_user user_id
-    find(:all, :conditions => ["user_id = (?)", user_id], :order => "created_on DESC", :limit => 5)
+    find :all, :conditions => ["user_id = (?)", user_id], :order => "created_on DESC", :limit => 5
+  end
+
+  # JoelTestScore 配列から score を抜き出し、逆順に並び替えてグラフ表示用配列を作成する。
+  def self.sort_in_reverse reports
+    score = nil
+    reports.each_with_index do |report, index|
+        unless index == 0
+          score = "'" + report.score.to_s + "', " + score
+        else
+          score = "'" + report.score.to_s + "'"
+        end
+      end unless reports.length == 0
+    score
   end
 end

@@ -42,7 +42,7 @@ class JoelTestController < ApplicationController
       :text_do_you_do_hallway_usability_testing
     ]
     @reports = JoelTestScore.find_past_score_of_user @user.id
-    sort_in_reverse @reports
+    @graph = JoelTestScore.sort_in_reverse @reports
   end
 
   # ジョエルテストの設問への回答を取得し、Yesの数(スコア)を格納する。
@@ -102,20 +102,5 @@ class JoelTestController < ApplicationController
         @average_answers[index] = (answers[index].to_f / total_count) * 100
       end
     end
-  end
-
-  # JoelTestScore 配列から score を抜き出し、逆順に並び替えてグラフ表示用配列を作成する。
-  def sort_in_reverse reports
-    score = nil
-    if reports.length != 0
-      reports.each_with_index {|report, index|
-        unless index == 0
-          score = "'" + report.score.to_s + "', " + score
-        else
-          score = "'" + report.score.to_s + "'"
-        end
-      }
-    end
-    @graph = score
   end
 end
