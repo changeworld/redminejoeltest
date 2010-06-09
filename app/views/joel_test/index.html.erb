@@ -44,7 +44,7 @@ end %>
   end
 } %>
     </ol>
-    <p><%= submit_tag l(:button_answer), {:disabled => @permisson_answer_joel_test ? false : true} %></p>
+    <p><%= submit_tag l(:button_answer), {:disabled => @permisson_answer_joel_test ? false : true, :disable_with => l(:label_loading)} %></p>
   <% end %>
 </div><%
 unless (@target == nil) %>
