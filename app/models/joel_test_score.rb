@@ -35,14 +35,10 @@ class JoelTestScore < ActiveRecord::Base
 
   # JoelTestScore 配列から score を抜き出し、逆順に並び替えてグラフ表示用配列を作成する。
   def self.sort_in_reverse reports
-    score = nil
-    reports.each_with_index do |report, index|
-        unless index == 0
-          score = "'" + report.score.to_s + "', " + score
-        else
-          score = "'" + report.score.to_s + "'"
-        end
+    score = []
+    reports.each do |report|
+      score.unshift report.score
       end unless reports.length == 0
-    score
+    score.join(',')
   end
 end

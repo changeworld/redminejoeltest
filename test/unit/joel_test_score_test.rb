@@ -51,17 +51,14 @@ class JoelTestScoreTest < ActiveSupport::TestCase
     assert_equal 0, JoelTestScore.find_past_score_of_user(0).length
   end
 
-  def test_is_joel_test_sort_in_reverse_should_return_nil
-    assert_nil JoelTestScore.sort_in_reverse JoelTestScore.find_past_score_of_user 0
-  end
-
   def test_is_joel_test_sort_in_reverse_should_return_not_nil
     assert_not_nil JoelTestScore.sort_in_reverse JoelTestScore.find_past_score_of_user joel_test_scores(:joel_test_scores001).user_id
   end
 
   def test_is_joel_test_sort_in_reverse_should_equal
-    score = "'" + joel_test_scores(:joel_test_scores004).score.to_s + "', '" + joel_test_scores(:joel_test_scores001).score.to_s + "', '" + joel_test_scores(:joel_test_scores002).score.to_s + "', '" + joel_test_scores(:joel_test_scores003).score.to_s + "'"
+    assert_equal "", JoelTestScore.sort_in_reverse(JoelTestScore.find_past_score_of_user 0)
+    score = [joel_test_scores(:joel_test_scores004).score, joel_test_scores(:joel_test_scores001).score, joel_test_scores(:joel_test_scores002).score, joel_test_scores(:joel_test_scores003).score]
     reports = JoelTestScore.sort_in_reverse JoelTestScore.find_past_score_of_user joel_test_scores(:joel_test_scores001).user_id
-    assert_equal reports, score
+    assert_equal reports, score.join(',')
   end
 end
