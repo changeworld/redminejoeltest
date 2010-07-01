@@ -21,7 +21,7 @@ Redmine::Plugin.register :redmine_joel_test do
   author 'Takashi Takebayashi'
   url "http://www.r-labs.org/projects/show/joeltest" if respond_to?(:url)
   description 'This is a Joel Test plugin for Redmine'
-  version '0.0.5'
+  version '0.0.6'
   requires_redmine :version_or_higher => '0.9.0'
 
   project_module :joel_test do
